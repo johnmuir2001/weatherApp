@@ -1,17 +1,26 @@
 body{
+    background-image: none;
     height: 100vh;
     background-repeat: no-repeat;
 }
+
+:root{
+    --sun-color: #ffd058 ;
+    --card-color: #7ad5ff ;
+    --cloud-color: #ffffff ;
+}
+
 #wrap{
     position: absolute;
     width: 360px;
     height: 600px;
     padding: 20px;
-    background-color: rgb(110, 202, 255);
+    background-color: var(--card-color);
+    border-radius: 10px;
     flex-direction: column;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%)
+    transform: translate(-50%, -50%);
 }
 #location{
     position: absolute;
@@ -56,6 +65,7 @@ img{
 }
 
 #city{
+    text-align: center;
     font-size: 24px;
     font-family: avenir;
     font-weight: 700;
@@ -74,11 +84,178 @@ img{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    padding:  0px 20px 0px 0px;
+    padding:  0px 40px 0px 20px;
 }
 p{
     color: white;
     font-family: avenir;
-    font-size: 15px;
+    font-size: 18px;
     font-weight: 500;
 }
+
+
+#sun{
+    display: none;
+    position: absolute;
+    top: -250px;
+    left: 250px;
+    height: 80px;
+    width: 80px;
+    background-color: var(--sun-color);
+    border-radius: 50%;
+    animation: sun 2s ease-in-out infinite;
+  }
+  #sun:before{
+    content: '';
+    position: absolute;
+    height: 100px;
+    width: 100px;
+    background-color: var(--sun-color);
+    border-radius: 50%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0.6;
+  }
+  #sun:after{
+    content: '';
+    position: absolute;
+    height: 120px;
+    width: 120px;
+    background-color: var(--sun-color);
+    border-radius: 50%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0.4;
+  }
+  @keyframes sun {
+    0%, 100%{
+      transform: scale(1)
+    }
+    50%{
+      transform: scale(1.1)
+    }
+  }
+
+#cloudWrap{
+    position: absolute;
+    top: -220px;
+    display: none;
+}
+.cloud{
+    position: absolute;
+    height: 50px;
+    width: 150px;
+    background-color: var(--cloud-color);
+    border-radius: 100px;
+    opacity: 0.6;
+}
+
+.cloud:nth-child(1) {
+    left: 100px;
+    top: -50px;
+}
+.cloud:nth-child(2) {
+    left: 0px;
+    top: 30px;
+}
+.cloud:nth-child(3) {
+    left: 200px;
+    top: 60px;
+}
+#cloudWrap2{
+    position: absolute;
+    top: -220px;
+    display: none;
+}
+.cloud2{
+    position: absolute;
+    height: 50px;
+    width: 150px;
+    background-color: var(--cloud-color);
+    border-radius: 100px;
+    opacity: 0.6;
+}
+
+.cloud2:nth-child(1) {
+    left: 40px;
+    top: -25px;
+    transform: scale(1.5);
+}
+.cloud2:nth-child(2) {
+    left: 170px;
+    top: 20px;
+    transform: scale(1.5);
+}
+.cloud2:nth-child(3) {
+    left: 180px;
+    top: -40px;
+    transform: scale(1.5);
+}
+.cloud2:nth-child(4) {
+    left: 20px;
+    top: 70px;
+    transform: scale(1.5);
+}
+
+    #rain {
+        display: none;
+      position: absolute;
+      top: -300px;
+      height: 30px;
+      width: 5px;
+      border-radius: 25%;
+      background-color: rgb(21, 177, 255);
+      animation: fall 1s linear infinite;
+    }
+    
+    #rain:nth-child(1) {
+      left: 230px;
+      animation-delay: 2s;
+    } 
+    #rain:nth-child(2) {
+        left: 50px;
+      animation-delay: 1.2s;
+    }
+    #rain:nth-child(3) {
+        left: 350px;
+      animation-delay: 0.4s;
+    }
+    #rain:nth-child(4) {
+        left: 130px;
+      animation-delay: 2.6s;
+    }
+    #rain:nth-child(5) {
+        left: 170px;
+      animation-delay: 0s;
+    }
+      #rain:nth-child(6) {
+        left: 30px;
+      animation-delay: 2.3s;
+    }
+      #rain:nth-child(7) {
+        left: 300px;
+      animation-delay: 0.86s;
+    }
+      #rain:nth-child(8) {
+        left: 90px;
+      animation-delay: 1.44s;
+    }
+
+    @keyframes fall {
+      0% {
+        transform: translateY(0);
+        opacity: 0;
+      }
+      5%, 95%{
+          opacity: 0;
+      }
+      15%, 85%{
+        opacity: 1;
+    }
+      100% {
+        transform: translateY(200px);
+        opacity: 0;
+      }
+    }

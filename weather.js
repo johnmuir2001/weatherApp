@@ -1,6 +1,6 @@
 const axios = require('axios')
 
-const apiKey = "584d4af46eb0557e647e9f61db64addf" //dark skies key in here
+const apiKey = "" //dark skies key in here
 
 const getWeather = async (locationObj) => {
 

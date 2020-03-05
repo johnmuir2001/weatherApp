@@ -40,7 +40,7 @@ const sky = () => {
 sky()
 
 btn.addEventListener('click', async () => {
-    const response = await fetch(`http://localhost:3005/weather?address=${input.value}`)
+    const response = await fetch(`/weather?address=${input.value}`)
     const result = await response.json()
     if (result.error){
         console.log(result.error)

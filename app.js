@@ -1,17 +1,19 @@
 const { getWeather } = require('./weather')
 const { getLocation } = require('./location')
-var figlet = require('figlet');
 
 const main = async (input) => {
+   try {
     const locationObj = await getLocation(input)
-    await getWeather(locationObj)
+    const response = await getWeather(locationObj)
+    return response
+   } catch (error) {
+       return {
+           error: "That is not a valid location"
+       }
+   }
 
 }
 
-console.log(figlet.textSync('Weather App', {
-    font: 'isometric2',
-    horizontalLayout: 'default',
-    verticalLayout: 'default'
-}));
-
-main(process.argv[2])
+module.exports = {
+    main
+}

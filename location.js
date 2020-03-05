@@ -1,6 +1,6 @@
 const axios = require('axios')
 
-const mapBoxKey = "" //map box key in here
+const mapBoxKey = "pk.eyJ1Ijoiam9obm11aXIiLCJhIjoiY2s3YnVsbHpjMDA2bzNsbnMydmZpZDkydiJ9.eWgBavwZFFaD98Ng-mMmYg" //map box key in here
 
 const getLocation = async (location) => {
     const URL = `https://api.mapbox.com/geocoding/v5/mapbox.places/${location}.json?access_token=${mapBoxKey}`
@@ -12,7 +12,7 @@ const getLocation = async (location) => {
             location: response.data.features[0].place_name
         }
     } catch (error) {
-        console.error(error);
+        console.log("ooops")
     }
 }
 

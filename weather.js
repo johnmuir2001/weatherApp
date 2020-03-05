@@ -1,6 +1,6 @@
 const axios = require('axios')
 
-const apiKey = "" //dark skies key in here
+const apiKey = "584d4af46eb0557e647e9f61db64addf" //dark skies key in here
 
 const getWeather = async (locationObj) => {
 
@@ -8,7 +8,10 @@ const getWeather = async (locationObj) => {
   const URL = `https://api.darksky.net/forecast/${apiKey}/${lat},${lng}`
   try {
     const response = await axios.get(URL);
-    console.log(`The Weather in ${location} is ${(response.data.currently.summary).toLowerCase()} and the temperature is ${((response.data.currently.temperature - 32) * 5/9).toFixed(2)}°C`);
+    return {
+      location: location,
+      data: response.data.currently
+    }
   } catch (error) {
     console.error(error);
   }

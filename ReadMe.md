@@ -1,3 +1,3 @@
 ## Weather App
 
-Weather app in the terminal using live data from API's and using Node.js
+Weather app using live data from API's using Node.js and Express.js

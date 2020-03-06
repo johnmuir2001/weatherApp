@@ -63,16 +63,19 @@ btn.addEventListener('click', async () => {
         if(result.data.icon == "clear-day"){
             sun.style.display = "block"
             cloudWrap.style.display = "none"
+            cloudWrap2.style.display = "none"
             rain.style.display = "none"
         } else if(result.data.icon == "clear-night"){
             sun.style.display = "block"
             cloudWrap.style.display = "none"
+            cloudWrap2.style.display = "none"
             rain.style.display = "none"
             document.documentElement.style.setProperty('--sun-color', '#ffd058 ');
         } else if(result.data.icon == "rain" || result.data.icon == "sleet"){
             document.documentElement.style.setProperty('--cloud-color', '#ababab');
             sun.style.display = "none"
             cloudWrap.style.display = "block"
+            cloudWrap2.style.display = "none"
             rain.style.display = "block"
             document.documentElement.style.setProperty('--sun-color', '#ffd058 ');
         } else if(result.data.icon == "fog"){

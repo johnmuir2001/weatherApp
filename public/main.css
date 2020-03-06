@@ -199,63 +199,67 @@ p{
     transform: scale(1.5);
 }
 
-    #rain {
-        display: none;
-      position: absolute;
-      top: -300px;
-      height: 30px;
-      width: 5px;
-      border-radius: 25%;
-      background-color: rgb(21, 177, 255);
-      animation: fall 1s linear infinite;
-    }
-    
-    #rain:nth-child(1) {
-      left: 230px;
-      animation-delay: 2s;
-    } 
-    #rain:nth-child(2) {
-        left: 50px;
-      animation-delay: 1.2s;
-    }
-    #rain:nth-child(3) {
-        left: 350px;
-      animation-delay: 0.4s;
-    }
-    #rain:nth-child(4) {
-        left: 130px;
-      animation-delay: 2.6s;
-    }
-    #rain:nth-child(5) {
-        left: 170px;
-      animation-delay: 0s;
-    }
-      #rain:nth-child(6) {
-        left: 30px;
-      animation-delay: 2.3s;
-    }
-      #rain:nth-child(7) {
-        left: 300px;
-      animation-delay: 0.86s;
-    }
-      #rain:nth-child(8) {
-        left: 90px;
-      animation-delay: 1.44s;
-    }
 
-    @keyframes fall {
-      0% {
+#rainWrap{
+    display: none;
+}
+#rain {
+    position: absolute;
+    opacity: 0;
+    top: -300px;
+    height: 30px;
+    width: 5px;
+    border-radius: 25%;
+    background-color: rgb(21, 177, 255);
+    animation: fall 1s linear infinite;
+}
+    
+#rain:nth-child(1) {
+    left: 230px;
+    animation-delay: 2s;
+} 
+#rain:nth-child(2) {
+    left: 50px;
+    animation-delay: 1.2s;
+}
+#rain:nth-child(3) {
+    left: 350px;
+    animation-delay: 0.4s;
+}
+#rain:nth-child(4) {
+    left: 130px;
+    animation-delay: 2.6s;
+}
+#rain:nth-child(5) {
+    left: 170px;
+    animation-delay: 0s;
+}
+    #rain:nth-child(6) {
+    left: 30px;
+    animation-delay: 2.3s;
+}
+#rain:nth-child(7) {
+    left: 300px;
+    animation-delay: 0.86s;
+}
+#rain:nth-child(8) {
+    left: 90px;
+    animation-delay: 1.44s;
+}
+
+@keyframes fall {
+    0% {
         transform: translateY(0);
         opacity: 0;
-      }
-      5%, 95%{
-          opacity: 0;
-      }
-      15%, 85%{
+    }
+    5%, 95%{
+        opacity: 0;
+    }
+    15%, 85%{
         opacity: 1;
     }
-      100% {
+    100% {
         transform: translateY(200px);
         opacity: 0;
-      }
     }
+}

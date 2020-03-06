@@ -4,6 +4,7 @@ const btn = document.getElementById("weather-btn")
 const input = document.getElementById("location")
 const city = document.getElementById("city")
 const wrap = document.getElementById("wrap")
+const weatherTitle = document.getElementById("weatherTitle")
 
 const sun = document.getElementById("sun")
 const cloudWrap = document.getElementById("cloudWrap")
@@ -53,6 +54,7 @@ btn.addEventListener('click', async () => {
         city.textContent = result.error
     } else {
         console.log(result)
+        weatherTitle.style.display = "none"
         city.textContent = result.location
         cloudTitle.textContent = "Cloud Coverage:"
         cloud.textContent = result.data.summary
@@ -70,7 +72,7 @@ btn.addEventListener('click', async () => {
             cloudWrap.style.display = "none"
             cloudWrap2.style.display = "none"
             rain.style.display = "none"
-            document.documentElement.style.setProperty('--sun-color', '#ffd058 ');
+            document.documentElement.style.setProperty('--sun-color', '#ffffff');
         } else if(result.data.icon == "rain" || result.data.icon == "sleet"){
             document.documentElement.style.setProperty('--cloud-color', '#ababab');
             sun.style.display = "none"
